@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Button from './components/button';
 import Input from './components/input';
 
+import { Button, Input } from 'vite-components';
+
 const Application = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState('');
@@ -41,7 +43,9 @@ const Application = () => {
       <h1>Important Things to Do</h1>
       <form onSubmit={handleNewTodoSubmit}>
         <Input type="text" value={newTodo} onChange={handleNewTodoChange} />
-        <Button type="submit">Add Todo</Button>
+        <Button dangerous type="submit">
+          Add Todo
+        </Button>
       </form>
       <ul>
         {todos.map((todo) => (
